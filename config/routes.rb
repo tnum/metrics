@@ -4,6 +4,8 @@ Rails.application.routes.draw do
 
   resources :sites
 
-  resources :events, only: [:create]
+  namespace :api, defaults: { format: :json } do
+    resources :events, only: [:create]
+  end
   
 end
