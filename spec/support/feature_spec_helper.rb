@@ -5,6 +5,16 @@ module FeatureSpecHelper
     config.include FeatureSpecHelper, type: :feature
   end
 
+  def fill_out_credentials(user)
+    within 'form' do
+      fill_in( 'Name', with: user.name )
+      fill_in( 'Email', with: user.email )
+      fill_in( 'Password', with: user.password )
+      fill_in( 'Password confirmation', with: user.password )
+      click_button( 'Sign up' )
+    end
+  end
+
   def add_site
   	visit '/'
   	click_link 'Add site'
