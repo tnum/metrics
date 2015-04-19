@@ -1,0 +1,7 @@
+<%= link_to 'Add site', new_site_path %>
+
+<div class="site-index">
+	<%= @sites.each do |site| %>
+		<%= link_to site.name, site_path(site.id) %>
+	<% end %>
+</div>
