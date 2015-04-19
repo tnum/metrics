@@ -4,6 +4,11 @@ class SitesController < ApplicationController
 		@sites = Site.all
 	end
 
+	def show
+		@site = Site.find(params[:id])
+		@siteevents = @site.events
+	end
+
 	def new
 		@site = Site.new
 	end
